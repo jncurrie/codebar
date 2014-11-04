@@ -11,9 +11,12 @@ app.controller("questions",function($scope, $http) {
 
   $scope.submit = function() {
     
-
-    $http.post('http://codebar-feedback.herokuapp.com/api/feedback', {data: $scope.answers}).
-    success(function(data, status, headers, config) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://codebar-feedback.herokuapp.com/api/feedback');
+    xhr.setRequestHeader('Content-Type', 'text/plain');
+    xhr.send(JSON.stringify({data: $scope.answers}));
+    $scope.hasSubmitted = true;
+    /*success(function(data, status, headers, config) {
         $scope.hasSubmitted = true;
       // this callback will be called asynchronously
       // when the response is available
@@ -21,7 +24,7 @@ app.controller("questions",function($scope, $http) {
     error(function(data, status, headers, config) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
-    });
+    });*/
   }
 });
 
