@@ -1,0 +1,26 @@
+<html ng-app="feedback">
+
+	<head>
+		<title>Codebar Feedback</title>
+		<link rel="stylesheet" href="css/style.css">
+    	<script type="text/javascript" src="js/angular.min.js"></script>
+    	<script type="text/javascript" src="js/main.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 style="color:rgb(112,76,150)">Codebar <span style="color:rgb(43,166,98)">Feedback</span> Form</h1>
+			<div ng-controller="questions">
+	 				<p>How did you hear about Codebar? <input type="text" ng-model="answers.hear"></p>
+	<!--  			<p ng-bind="answers.hear"></p>
+	 --> 			<p>Would you recommend Codebar to a friend? <input type="text" ng-model="answers.friend"></p>
+	<!--  			<p ng-bind="answers.friend"></p>
+	 --> 			<p>Any additional comments? <input type="text" ng-model="answers.comments"></p>
+	<!--  			<p ng-bind="answers.comments"></p>
+	 --> 			<button ng-if="!hasSubmitted" ng-click="submit()">Submit Answers</button>
+	 			<p ng-if="hasSubmitted"><b>Thank you!</b></p>
+			</div>
+		</div>
+	</body>
+
+</html>
