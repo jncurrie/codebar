@@ -6,13 +6,13 @@ app.controller("questions",function($scope, $http) {
   $scope.hasSubmitted = false;
 
   $scope.answers = {
-    hear: "", friend: "", comments: ""
+    hear: "", friend: "", offer: " ", comments: ""
   }
 
   $scope.submit = function() {
     
 
-    $http.post('/someUrl', $scope.answers).
+    $http.post('http://codebar-feedback.herokuapp.com/api/feedback', {data: $scope.answers}).
     success(function(data, status, headers, config) {
         $scope.hasSubmitted = true;
       // this callback will be called asynchronously
