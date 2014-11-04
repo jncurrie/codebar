@@ -1,0 +1,22 @@
+body {
+	width: 100%;
+	font-family: proxima-nova, Helvetica, Arial, sans-serif;
+}
+
+button {
+	padding: 10px;
+	border: 1px solid rgb(112,76,150);
+	background-color: white;
+	color:rgb(112,76,150);
+}
+
+button:hover {
+	background-color: rgb(43,166,98);
+	color:white;
+}
+
+.container {
+	padding-top: 10px;
+	margin: 0 auto;
+	max-width: 750px;
+}
