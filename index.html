@@ -9,17 +9,35 @@
 
 	<body>
 		<div class="container">
+			<img src="img/logo.png" width="150px">
 			<h1 style="color:rgb(112,76,150)">Codebar <span style="color:rgb(43,166,98)">Feedback</span> Form</h1>
 			<div ng-controller="questions">
-	 				<p>How did you hear about Codebar? <input type="text" ng-model="answers.hear"></p>
-	<!--  			<p ng-bind="answers.hear"></p>
-	 --> 			<p>Would you recommend Codebar to a friend? <input type="text" ng-model="answers.friend"></p>
-	<!--  			<p ng-bind="answers.friend"></p>
-	 --> 			<p>What else would you like to see offered at Codebar? <input type="text" ng-model="answers.offer"></p>
-	<!--  			<p ng-bind="answers.comments"></p>
-		 --> 		<p>Additional comments <input type="text" ng-model="answers.comments"></p>
-	  			<button ng-if="!hasSubmitted" ng-click="submit()">Submit Answers</button>
-	 			<p ng-if="hasSubmitted"><b>Thank you!</b></p>
+				 	<p><b>1. How many times have you attended Codebar?</b></p>
+					  <input type="radio" ng-model="answers.times" value="0"> Registered but haven't been yet <br/>
+					  <input type="radio" ng-model="answers.times" value="1"> First time <br/>
+					  <input type="radio" ng-model="answers.times" value="2-5"> 2 to 5 times <br/>
+					  <input type="radio" ng-model="answers.times" value="5+"> 5 or more times <br/>
+
+ 					<p><b>2. How did you hear about Codebar?</b></p>
+ 					<p> <input type="text" ng-model="answers.hear"></p>
+
+					<p><b>3. What is your favourite thing about Codebar?</b></p>
+ 	  				<p><textarea type="text" ng-model="answers.favourite"></textarea></p>
+
+ 	  				<p><b>4. How could Codebar be improved?</b></p>
+ 	  				<p><textarea type="text" ng-model="answers.improve"></textarea></p>
+
+					<p><b>5. How likely are you to recommend Codebar to others?</b></p>
+					  <input type="radio" ng-model="answers.likely" value="Extremely likely">  Extremely likely <br/>
+					  <input type="radio" ng-model="answers.likely" value="Quite likely"> Quite likely <br/>
+					  <input type="radio" ng-model="answers.likely" value="Slightly likely"> Slightly likely <br/>
+					  <input type="radio" ng-model="answers.likely" value="Not likely at all"> Not likely at all <br/>
+		  			
+		  			<p><b>6. Any additional comments?</b></p>
+		  			<p> <textarea type="text" ng-model="answers.comments"></textarea></p>
+	  				
+	  				<button ng-if="!hasSubmitted" ng-click="submit()">Submit Answers</button>
+	 				<p ng-if="hasSubmitted"><b>Thank you!</b></p>
 			</div>
 		</div>
 	</body>
